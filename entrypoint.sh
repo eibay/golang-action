@@ -53,7 +53,9 @@ if [ $# -eq 0 ] || [ "$*" = "" ]; then
       fi
     fi
     go build ./...
+    docker-compose up
     go test ./...
+    docker-compose down
   fi
 else
   sh -c "$*"
